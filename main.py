@@ -2,11 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import agentpy as ap
 from math import floor
+from random import randint
 
 m = 40
 n = 20
 trash_pc = 0.56
 cleaner_count = 50
+max_steps =  150
 
 class CleanerEnvironment(ap.Grid):
 
@@ -25,7 +27,10 @@ class CleanerEnvironment(ap.Grid):
         x = obj_pos[0] - source_pos[0] 
         y = obj_pos[1] - source_pos[1] 
         return np.array([x, y])
-
+    
+    def get_trash_at_pos(self, pos):
+        trash = list(filter(lambda ag: ag.type == "TrashAgent", list(self.grid[pos[0]][pos[1]][0])))
+        return trash
 
 class TrashAgent(ap.Agent):
     def setup(self, env):
@@ -38,75 +43,33 @@ class CleanerAgent(ap.Agent):
     def setup(self, env):
         self.picked_count:int = 0
         self.env:CleanerEnvironment = env
-        self.objective:TrashAgent = None
-
-    #vector normalizado a basura objetivo con movimiento vertical o horizontal
-    def get_dir(self, trash:TrashAgent):
-        v = self.env.vector(self, trash)
-        magnitude = np.linalg.norm(v)
-        
-        v = v / magnitude
-
-        if (abs(v[0]) >= abs(v[1])):
-            v = (1, 0) if v[0] > 0 else (-1, 0)
-        else:
-            v = (0, 1) if v[1] > 0 else (0, -1)
-
-        return v
 
     def get_pos(self):
         return self.env.get_agent_pos(self)
     
-    def clean(self):
-        self.env.remove_agents(self.objective)
-        self.objective = None
-        self.picked_count += 1
-
-    def distance_to(self, trash:TrashAgent):
-        v = self.env.vector(self, trash)
-        return np.linalg.norm(v)
-
-    def objective_exists(self):
-        return self.objective in self.env.positions
-
-    def set_objective(self):
-        trash = list(filter(lambda ag: ag.type == "TrashAgent", self.env.positions.keys()))
-
-        if (len(trash) == 0):
-            self.model.stop()
-            return False
-
-        for t in trash:
-            self.objective = t if self.objective == None or self.distance_to(t) < self.distance_to(self.objective) else self.objective
-
-        return True
+    def clean(self, trash):
+        self.env.remove_agents(trash)
+        self.picked_count += len(trash)
 
     def execute(self):
-        if not self.objective_exists():
-            self.objective = None
-
-        if self.objective == None :
-            if not self.set_objective():
-                return 
-
-        if np.array_equal(self.objective.get_pos(), self.get_pos()):
-            self.clean()
+        trash = self.env.get_trash_at_pos(self.get_pos())
+        if len(trash) != 0:
+            self.clean(trash)
 
         else :
-            trash_dir = self.get_dir(self.objective)
-            print(trash_dir)
-            self.env.move_by(self, trash_dir)
+            dir = (randint(-1, 1), randint(-1, 1))
+            self.env.move_by(self, dir)
         
 
 class CleanerModel(ap.Model):
     def setup(self):
-        self.environment = CleanerEnvironment(self, (20, 20), track_empty=True)
+        self.environment = CleanerEnvironment(self, (m, n), track_empty=True)
         
         #add trash
         self.environment.add_agents([TrashAgent(self, self.environment) for _ in range(floor(m * n * trash_pc))], random=True)
 
         #add cleaners
-        self.environment.add_agents([CleanerAgent(self, self.environment) for _ in range(cleaner_count)], random=True)
+        self.environment.add_agents([CleanerAgent(self, self.environment) for _ in range(cleaner_count)], [(1, 1) for _ in range(cleaner_count)])
 
     def step(self):
         for ag in list(self.environment.agents):
@@ -126,7 +89,7 @@ def my_plot(model, ax):
     ax.imshow(grid, cmap='Greys')
 
 fig, ax = plt.subplots()
-parameters = {'print': False, 'steps':150}
+parameters = {'print': False, 'steps':max_steps}
 cleaner_model = CleanerModel(parameters)
 
 anim = ap.animate(cleaner_model, fig, ax, my_plot)
