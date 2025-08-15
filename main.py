@@ -11,22 +11,9 @@ cleaner_count = 50
 max_steps =  150
 
 class CleanerEnvironment(ap.Grid):
-
-    def agent_at_pos(self, pos):
-        for ag in self.agents:
-            if pos == self.positions[ag]:
-                return ag
             
     def get_agent_pos(self, agent:ap.Agent):
         return np.array(self.positions[agent])
-    
-    def vector(self, source:ap.Agent, objective:ap.Agent):
-        source_pos = self.get_agent_pos(source)
-        obj_pos = self.get_agent_pos(objective)
-
-        x = obj_pos[0] - source_pos[0] 
-        y = obj_pos[1] - source_pos[1] 
-        return np.array([x, y])
     
     def get_trash_at_pos(self, pos):
         trash = list(filter(lambda ag: ag.type == "TrashAgent", list(self.grid[pos[0]][pos[1]][0])))
@@ -76,10 +63,6 @@ class CleanerModel(ap.Model):
             if ag.type == "CleanerAgent":
                 ag.execute()
     
-    def update(self):
-        return super().update()
-    
-
 def my_plot(model, ax):
     grid = np.zeros(model.environment.shape)
     print(model.environment.positions)
