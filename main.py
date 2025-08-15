@@ -1,9 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import agentpy as ap
+from math import floor
 
-trash_count = 20
-cleaner_count = 1
+m = 40
+n = 20
+trash_pc = 0.56
+cleaner_count = 50
 
 class CleanerEnvironment(ap.Grid):
 
@@ -63,8 +66,11 @@ class CleanerAgent(ap.Agent):
         v = self.env.vector(self, trash)
         return np.linalg.norm(v)
 
+    def objective_exists(self):
+        return self.objective in self.env.positions
+
     def set_objective(self):
-        trash = list(filter(lambda ag: ag.type == "TrashAgent", self.env.agents))
+        trash = list(filter(lambda ag: ag.type == "TrashAgent", self.env.positions.keys()))
 
         if (len(trash) == 0):
             self.model.stop()
@@ -76,7 +82,10 @@ class CleanerAgent(ap.Agent):
         return True
 
     def execute(self):
-        if self.objective == None:
+        if not self.objective_exists():
+            self.objective = None
+
+        if self.objective == None :
             if not self.set_objective():
                 return 
 
@@ -94,7 +103,7 @@ class CleanerModel(ap.Model):
         self.environment = CleanerEnvironment(self, (20, 20), track_empty=True)
         
         #add trash
-        self.environment.add_agents([TrashAgent(self, self.environment) for _ in range(trash_count)], random=True)
+        self.environment.add_agents([TrashAgent(self, self.environment) for _ in range(floor(m * n * trash_pc))], random=True)
 
         #add cleaners
         self.environment.add_agents([CleanerAgent(self, self.environment) for _ in range(cleaner_count)], random=True)
