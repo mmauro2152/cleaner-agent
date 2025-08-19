@@ -1,0 +1,252 @@
+[
+    {
+        "seed": 130584572847001067700195603078807273681,
+        "cleaner_count": 100,
+        "avg trash picked": 5.72,
+        "max trash picked": 69,
+        "min trash picked": 0,
+        "avg steps to trash": 19.037735849056602,
+        "remaining trash": 37.120,
+        "current step": 300
+    },
+    {
+        "seed": 271459734099207909168126548970408153555,
+        "cleaner_count": 100,
+        "avg trash picked": 4.66,
+        "max trash picked": 46,
+        "min trash picked": 0,
+        "avg steps to trash": 24.038567493112946,
+        "remaining trash": 41.360,
+        "current step": 300
+    },
+    {
+        "seed": 36668460541314959391125339498504181793,
+        "cleaner_count": 100,
+        "avg trash picked": 5.48,
+        "max trash picked": 49,
+        "min trash picked": 0,
+        "avg steps to trash": 18.288888888888888,
+        "remaining trash": 38.080,
+        "current step": 300
+    },
+    {
+        "seed": 109650855389457571974987929889050142681,
+        "cleaner_count": 100,
+        "avg trash picked": 6.01,
+        "max trash picked": 46,
+        "min trash picked": 0,
+        "avg steps to trash": 20.027027027027028,
+        "remaining trash": 35.960,
+        "current step": 300
+    },
+    {
+        "seed": 64109683909563801746787229918813429619,
+        "cleaner_count": 100,
+        "avg trash picked": 6.27,
+        "max trash picked": 63,
+        "min trash picked": 0,
+        "avg steps to trash": 18.673596673596673,
+        "remaining trash": 34.920,
+        "current step": 300
+    },
+    {
+        "seed": 87191068078296896643072176779505072741,
+        "cleaner_count": 150,
+        "avg trash picked": 4.333333333333333,
+        "max trash picked": 57,
+        "min trash picked": 0,
+        "avg steps to trash": 19.492753623188406,
+        "remaining trash": 34.000,
+        "current step": 300
+    },
+    {
+        "seed": 157063890227948095718527095354175416257,
+        "cleaner_count": 150,
+        "avg trash picked": 3.966666666666667,
+        "max trash picked": 44,
+        "min trash picked": 0,
+        "avg steps to trash": 21.239179954441912,
+        "remaining trash": 36.200,
+        "current step": 300
+    },
+    {
+        "seed": 50393377671369406959901903188703740900,
+        "cleaner_count": 150,
+        "avg trash picked": 3.973333333333333,
+        "max trash picked": 37,
+        "min trash picked": 0,
+        "avg steps to trash": 19.010615711252655,
+        "remaining trash": 36.160,
+        "current step": 300
+    },
+    {
+        "seed": 266916073504152973332823754755611810852,
+        "cleaner_count": 150,
+        "avg trash picked": 3.98,
+        "max trash picked": 57,
+        "min trash picked": 0,
+        "avg steps to trash": 20.265524625267666,
+        "remaining trash": 36.120,
+        "current step": 300
+    },
+    {
+        "seed": 323443993984262114434642438390820198750,
+        "cleaner_count": 150,
+        "avg trash picked": 4.066666666666666,
+        "max trash picked": 62,
+        "min trash picked": 0,
+        "avg steps to trash": 22.90308370044053,
+        "remaining trash": 35.600,
+        "current step": 300
+    },
+    {
+        "seed": 131922944998092646812566454052791039813,
+        "cleaner_count": 200,
+        "avg trash picked": 3.42,
+        "max trash picked": 61,
+        "min trash picked": 0,
+        "avg steps to trash": 17.025242718446602,
+        "remaining trash": 32.640,
+        "current step": 300
+    },
+    {
+        "seed": 181318957104099090219678612260373217430,
+        "cleaner_count": 200,
+        "avg trash picked": 3.545,
+        "max trash picked": 61,
+        "min trash picked": 0,
+        "avg steps to trash": 22.25,
+        "remaining trash": 31.640,
+        "current step": 300
+    },
+    {
+        "seed": 156425395539331183180377591880598618140,
+        "cleaner_count": 200,
+        "avg trash picked": 3.115,
+        "max trash picked": 43,
+        "min trash picked": 0,
+        "avg steps to trash": 21.835497835497836,
+        "remaining trash": 35.080,
+        "current step": 300
+    },
+    {
+        "seed": 227450827401732461570350235892009513936,
+        "cleaner_count": 200,
+        "avg trash picked": 3.36,
+        "max trash picked": 43,
+        "min trash picked": 0,
+        "avg steps to trash": 20.512,
+        "remaining trash": 33.120,
+        "current step": 300
+    },
+    {
+        "seed": 240162280578662622076604080922970142530,
+        "cleaner_count": 200,
+        "avg trash picked": 3.555,
+        "max trash picked": 42,
+        "min trash picked": 0,
+        "avg steps to trash": 16.93383742911153,
+        "remaining trash": 31.560,
+        "current step": 300
+    },
+    {
+        "seed": 81614033910174871138779104245703921134,
+        "cleaner_count": 250,
+        "avg trash picked": 2.82,
+        "max trash picked": 59,
+        "min trash picked": 0,
+        "avg steps to trash": 24.244444444444444,
+        "remaining trash": 31.800,
+        "current step": 300
+    },
+    {
+        "seed": 40071598532502520238897832492372560339,
+        "cleaner_count": 250,
+        "avg trash picked": 2.708,
+        "max trash picked": 51,
+        "min trash picked": 0,
+        "avg steps to trash": 23.3796992481203,
+        "remaining trash": 32.920,
+        "current step": 300
+    },
+    {
+        "seed": 42997537324131239023100817440141599479,
+        "cleaner_count": 250,
+        "avg trash picked": 2.892,
+        "max trash picked": 83,
+        "min trash picked": 0,
+        "avg steps to trash": 17.713747645951035,
+        "remaining trash": 31.080,
+        "current step": 300
+    },
+    {
+        "seed": 22199296789534427219538574120025903990,
+        "cleaner_count": 250,
+        "avg trash picked": 3.12,
+        "max trash picked": 64,
+        "min trash picked": 0,
+        "avg steps to trash": 19.941176470588236,
+        "remaining trash": 28.800,
+        "current step": 300
+    },
+    {
+        "seed": 217606526260751981144169969358318085493,
+        "cleaner_count": 250,
+        "avg trash picked": 2.976,
+        "max trash picked": 58,
+        "min trash picked": 0,
+        "avg steps to trash": 18.16211604095563,
+        "remaining trash": 30.240,
+        "current step": 300
+    },
+    {
+        "seed": 272462403175348883358511441858741757081,
+        "cleaner_count": 300,
+        "avg trash picked": 2.296666666666667,
+        "max trash picked": 48,
+        "min trash picked": 0,
+        "avg steps to trash": 21.5378640776699,
+        "remaining trash": 32.440,
+        "current step": 300
+    },
+    {
+        "seed": 297039975729001071272882061424897996426,
+        "cleaner_count": 300,
+        "avg trash picked": 2.4833333333333334,
+        "max trash picked": 46,
+        "min trash picked": 0,
+        "avg steps to trash": 24.413854351687387,
+        "remaining trash": 30.200,
+        "current step": 300
+    },
+    {
+        "seed": 309634908589836209534602912241130637995,
+        "cleaner_count": 300,
+        "avg trash picked": 2.3733333333333335,
+        "max trash picked": 70,
+        "min trash picked": 0,
+        "avg steps to trash": 23.245210727969347,
+        "remaining trash": 31.520,
+        "current step": 300
+    },
+    {
+        "seed": 318417162204540783026982561933298697382,
+        "cleaner_count": 300,
+        "avg trash picked": 2.4466666666666668,
+        "max trash picked": 55,
+        "min trash picked": 0,
+        "avg steps to trash": 22.052919708029197,
+        "remaining trash": 30.640,
+        "current step": 300
+    },
+    {
+        "seed": 98431646467316688626422982773007389593,
+        "cleaner_count": 300,
+        "avg trash picked": 2.5933333333333333,
+        "max trash picked": 54,
+        "min trash picked": 0,
+        "avg steps to trash": 20.923728813559322,
+        "remaining trash": 28.880,
+        "current step": 300
+    }
+]
